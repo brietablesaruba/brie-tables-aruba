@@ -845,10 +845,8 @@ p { margin: 0; }
 .rights-line { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
 .rights-line > span[data-i18n] { min-width: 0; }
 .powered-badge {
-  width: 42px; height: 42px; flex: 0 0 auto; padding: 5px; box-sizing: border-box;
-  border-radius: 50%; object-fit: contain;
-  background: #fff;
-  box-shadow: 0 0 0 1px rgba(246, 217, 140, 0.5), 0 6px 14px rgba(0, 0, 0, 0.4);
+  width: 42px; height: 42px; flex: 0 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
 }
 
 /* ---------- sticky order bar ---------- */
