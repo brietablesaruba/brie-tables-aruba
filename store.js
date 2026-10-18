@@ -219,7 +219,7 @@
       footAreaValue: "Across Aruba — villas, beaches, boats",
       footHoursValue: "Daily · by WhatsApp or email",
       footNote: "Hand-styled in Aruba",
-      footerRights: "© {year} Brie Tables Aruba. All rights reserved.",
+      footerRights: "© {year} Brie Tables Aruba. All rights reserved — Powered by",
       adminLink: "Admin",
       backTop: "Back to top",
 
@@ -482,7 +482,7 @@
       footAreaValue: "En toda Aruba — villas, playas, botes",
       footHoursValue: "Todos los días · WhatsApp o correo",
       footNote: "Montado a mano en Aruba",
-      footerRights: "© {year} Brie Tables Aruba. Todos los derechos reservados.",
+      footerRights: "© {year} Brie Tables Aruba. Todos los derechos reservados — Desarrollado por",
       adminLink: "Admin",
       backTop: "Volver arriba",
 
@@ -746,7 +746,7 @@
     footAreaValue: "Tur Aruba — villa, playa, boto",
     footHoursValue: "Tur dia · WhatsApp òf email",
     footNote: "Trahá na man na Aruba",
-    footerRights: "© {year} Brie Tables Aruba. Tur derecho reservá.",
+    footerRights: "© {year} Brie Tables Aruba. Tur derecho reservá — Trahá pa",
     adminLink: "Admin",
     backTop: "Bai ariba",
 
@@ -1009,7 +1009,7 @@
     footAreaValue: "Op heel Aruba — villa's, stranden, boten",
     footHoursValue: "Dagelijks · WhatsApp of e-mail",
     footNote: "Met de hand gestyled in Aruba",
-    footerRights: "© {year} Brie Tables Aruba. Alle rechten voorbehouden.",
+    footerRights: "© {year} Brie Tables Aruba. Alle rechten voorbehouden — Mogelijk gemaakt door",
     adminLink: "Beheer",
     backTop: "Naar boven",
 
