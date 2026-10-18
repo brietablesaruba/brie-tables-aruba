@@ -12,8 +12,8 @@ The customer-facing site is a single-page storefront at the project root:
 
 ### Storefront features
 
-- **Quick order drawer** - pick boards, adjust quantities, add delivery details, and send the order in one step.
-- **WhatsApp ordering** - the order summary opens WhatsApp via `https://wa.me/...`; a quiet email fallback sits next to it.
+- **Quick order drawer** - pick boards, adjust quantities, add delivery details, and place the order with one button.
+- **Orders land on the shop phone** - the site publishes each order to a free ntfy.sh relay; the Brie Tables Admin app listens around the clock, rings a loud notification, and keeps the full order details. WhatsApp is kept only as a hidden safety fallback when the relay is unreachable.
 - **Brie Club accounts** (stored on the device) - 10% member pricing, saved delivery details, and one-tap reorder from order history.
 - **Four languages** - English, Spanish, Papiamento, and Dutch, remembered per visitor.
 - **Fast and resilient** - local optimized photos, no frameworks, reduced-motion support.
@@ -25,8 +25,13 @@ Customer-facing settings live at the top of `store.js` in the `CONFIG` block:
 ```js
 whatsapp: "2975679921",        // WhatsApp number, digits only
 email: "Manu99jz@gmail.com",   // Email fallback
-memberDiscount: 0.10           // Brie Club discount
+memberDiscount: 0.10,          // Brie Club discount
+ordersRelay: "https://ntfy.sh",// free relay that carries orders to the shop phone
+ordersTopic: "brie-tables-orders-9f3k7q2mx5"
 ```
+
+`ordersRelay` and `ordersTopic` must match the constants in the admin app's
+`OrderService.java`; that is the private channel the two sides agree on.
 
 Switching ordering to the new WhatsApp Business number is a one-line change: update
 `whatsapp` (digits only, with country code) and redeploy.
@@ -48,16 +53,32 @@ The `brie-admin-apk` folder (next to this one) builds **Brie Tables Admin**, an
 installable Android app (`BrieTablesAdmin-1.0.apk`) that manages the same data from a
 phone:
 
+- **Orders** - customer orders arrive with a loud notification, a badge count, and full
+  details (items, totals, delivery info); mark them done, call, reply on WhatsApp, or
+  delete. A foreground service keeps listening around the clock and restarts on boot.
 - edit platters - name, badge, serves, price, description, accent colour, availability,
   plus photo replacement (photos are compressed to WebP on the device)
 - edit business info (WhatsApp number, email, hours, socials, add-to-cart text, logo URL)
-- **Publish** writes `admin-data.json` and `photos/*.webp` into this folder, either
-  through a GitHub token (works from anywhere) or a tiny local upload server
-  (`brie-admin-apk/tools/publish_server.py`, no installs needed)
+- **Publish** writes `admin-data.json` and `photos/*.webp` into this folder straight to
+  GitHub with a fine-grained token (kept only on the phone, never in the app package)
 
 On every visit the storefront now also fetches `admin-data.json`; when the file exists
 it wins over localStorage, and when it is missing the site behaves exactly as before.
 If a published photo fails to load, the site falls back to `platter-photos/*.jpg`.
+
+### Hosting & going live
+
+- The live site is served free by **GitHub Pages** from the
+  `brietablesaruba/brie-tables-aruba` repository (branch `main`, root folder).
+- Public address: **https://www.brietablesaruba.com** (the apex `brietablesaruba.com`
+  redirects to `www`).
+- DNS lives in the Netlify account (Netlify DNS): four `A` records on the apex point to
+  GitHub Pages (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and `www` is a
+  `CNAME` to `brietablesaruba.github.io`.
+- The old Netlify site (`dancing-concha-61df66.netlify.app`) stays deployed as a
+  rollback option - restore its DNS records to point the domain back to Netlify.
+- Costs stay at zero: GitHub Pages hosting is free, orders travel over the free
+  ntfy.sh relay, and the admin app talks straight to the GitHub API.
 
 ### Brie Club limitations
 
