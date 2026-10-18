@@ -406,7 +406,7 @@ p { margin: 0; }
 .menu-side strong { display: block; font-size: 13px; line-height: 1.35; }
 .menu-side p { margin-top: 4px; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
 .menu-side .text-link { margin-top: 9px; font-size: 11.5px; }
-.boards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
+.boards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 24px); }
 .board-card {
   position: relative; display: flex; flex-direction: column; padding: 10px;
   border-radius: 26px; border: 1px solid rgba(217, 154, 34, 0.26);
@@ -1170,11 +1170,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .nav-utility .account-trigger .account-label { display: inline; }
   .nav-utility .account-trigger .member-dot { position: static; margin: 0; }
   .header-actions > .lang-wrap, .header-actions > .account-trigger { display: none; }
-  .menu-toggle { display: inline-flex; width: 48px; height: 48px; }
-  .menu-toggle span { width: 20px; height: 2px; }
-  .menu-toggle span::before, .menu-toggle span::after { width: 20px; height: 2px; }
-  .menu-toggle span::before { top: -6px; }
-  .menu-toggle span::after { top: 6px; }
+  .menu-toggle { display: inline-flex; width: 52px; height: 52px; }
+  .menu-toggle span { width: 22px; height: 2.2px; }
+  .menu-toggle span::before, .menu-toggle span::after { width: 22px; height: 2.2px; }
+  .menu-toggle span::before { top: -6.5px; }
+  .menu-toggle span::after { top: 6.5px; }
   .header-actions { gap: 7px; }
   .cart-btn { padding-left: 13px; }
   .section, .hero, .how-inner, .footer-inner, .header-inner { width: min(100% - 32px, 1240px); }
@@ -1205,9 +1205,14 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .brand-text em { font-size: 7.5px; letter-spacing: 0.2em; }
   .brand-mark { width: 44px; height: 44px; }
   .header-actions .cart-btn .cart-text { display: none; }
-  .cart-btn { padding: 0 7px 0 13px; height: 48px; gap: 8px; }
-  .cart-btn svg { width: 21px; height: 21px; }
-  .cart-count { min-width: 29px; height: 32px; font-size: 13px; }
+  .cart-btn { padding: 0 7px 0 14px; height: 56px; gap: 9px; }
+  .cart-btn svg { width: 24px; height: 24px; }
+  .cart-count { min-width: 34px; height: 36px; font-size: 15px; }
+  .menu-toggle { width: 56px; height: 56px; }
+  .menu-toggle span { width: 25px; height: 2.6px; }
+  .menu-toggle span::before, .menu-toggle span::after { width: 25px; height: 2.6px; }
+  .menu-toggle span::before { top: -7.5px; }
+  .menu-toggle span::after { top: 7.5px; }
   .hero h1 { font-size: clamp(42px, 12vw, 62px); }
   .hero-sub { font-size: 15px; margin-top: 20px; }
   .hero-cta { margin-top: 24px; }
@@ -1271,7 +1276,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .hero-stats { gap: 12px; }
   .hero-stats li + li { padding-left: 12px; }
   .header-actions { gap: 5px; }
-  .cart-btn { padding: 0 5px 0 10px; }
+  .header-inner { gap: 12px; }
+  .cart-btn { padding: 0 5px 0 11px; }
+  .cart-count { min-width: 32px; }
   .brand-mark { width: 42px; height: 42px; }
   .club-actions .btn { width: 100%; }
 }

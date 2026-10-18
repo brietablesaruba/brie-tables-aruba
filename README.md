@@ -64,7 +64,7 @@ phone:
 
 On every visit the storefront now also fetches `admin-data.json`; when the file exists
 it wins over localStorage, and when it is missing the site behaves exactly as before.
-If a published photo fails to load, the site falls back to `platter-photos/*.jpg`.
+If a published photo fails to load, the site falls back to the bundled photo for that board in `photos/`.
 
 ### Hosting & going live
 

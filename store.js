@@ -29,46 +29,36 @@
   const MEMBER_RATE = CONFIG.memberDiscount;
 
   const defaultProducts = [
-    { id: "1", price: 35, accent: "#d99a22", image: "platter-photos/classic-deli-board.jpg" },
-    { id: "2", price: 45, accent: "#f8d574", image: "platter-photos/artisan-cheese-platter.jpg" },
-    { id: "3", price: 40, accent: "#6e7c23", image: "platter-photos/mediterranean-mix.jpg" },
-    { id: "4", price: 50, accent: "#c8562b", image: "platter-photos/sweet-savory-feast.jpg" },
-    { id: "5", price: 30, accent: "#839033", image: "platter-photos/vegan-delight.jpg" },
-    { id: "6", price: 60, accent: "#ad3728", image: "platter-photos/grand-gourmet.jpg" }
+    { id: "1", price: 45, accent: "#eba23c", image: "photos/breakfast.webp" },
+    { id: "2", price: 55, accent: "#c96f2e", image: "photos/brunch.webp" },
+    { id: "3", price: 65, accent: "#b23a48", image: "photos/charcuteria.webp" },
+    { id: "4", price: 60, accent: "#6d8b3a", image: "photos/italiana.webp" }
   ];
 
   const productCopy = {
     en: {
-      "1": { name: "Classic Deli Board", tag: "House favorite", serves: "Serves 2–3", description: "Cured meats, cheeses, olives, crackers, and a clean savory balance for easy sharing." },
-      "2": { name: "Artisan Cheese Platter", tag: "Cheese first", serves: "Serves 3–4", description: "A creamy, nutty, elegant cheese selection with fruit notes and crunchy pairings." },
-      "3": { name: "Mediterranean Mix", tag: "Bright bites", serves: "Serves 3–4", description: "Olives, dips, herbs, cheeses, and fresh island-ready flavors with a sunny finish." },
-      "4": { name: "Sweet & Savory Feast", tag: "Party mode", serves: "Serves 4–5", description: "The best of both moods: salty, creamy, crisp, sweet, and built for grazing." },
-      "5": { name: "Vegan Delight", tag: "Plant based", serves: "Serves 2–3", description: "A fresh spread of plant-forward bites, vegetables, dips, nuts, and bright textures." },
-      "6": { name: "The Grand Gourmet", tag: "Showstopper", serves: "Serves 5–6", description: "A fuller centerpiece board with premium cheeses, charcuterie, crackers, nuts, and extras." }
+      "1": { name: "Breakfast", tag: "Morning favorite", serves: "Serves 3–4", description: "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit." },
+      "2": { name: "Brunch", tag: "Weekend classic", serves: "Serves 4–5", description: "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit." },
+      "3": { name: "Charcuteria", tag: "Cured classic", serves: "Serves 4–5", description: "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips and crisp fresh vegetables." },
+      "4": { name: "Italiana", tag: "Italian-inspired", serves: "Serves 4–5", description: "Garlic bread with tomato, mozzarella and basil, Italian cured meats, gorgonzola and gouda, pesto, olives, grissini and cherry tomatoes." }
     },
     es: {
-      "1": { name: "Tabla Deli Clásica", tag: "Favorita de la casa", serves: "Sirve 2–3", description: "Carnes curadas, quesos, aceitunas, galletas y un balance salado perfecto para compartir." },
-      "2": { name: "Tabla de Quesos Artesanales", tag: "Queso primero", serves: "Sirve 3–4", description: "Selección elegante de quesos cremosos y nueces con frutas y acompañantes crujientes." },
-      "3": { name: "Mezcla Mediterránea", tag: "Bocados frescos", serves: "Sirve 3–4", description: "Aceitunas, dips, hierbas, quesos y sabores frescos listos para la isla." },
-      "4": { name: "Dulce y Salado", tag: "Modo fiesta", serves: "Sirve 4–5", description: "Lo mejor de ambos mundos: salado, cremoso, crujiente, dulce y perfecto para picar." },
-      "5": { name: "Delicia Vegana", tag: "A base de plantas", serves: "Sirve 2–3", description: "Una selección fresca con vegetales, dips, nueces y texturas brillantes." },
-      "6": { name: "Gran Gourmet", tag: "La estrella", serves: "Sirve 5–6", description: "Una tabla central con quesos premium, charcutería, galletas, nueces y extras." }
+      "1": { name: "Breakfast", tag: "Favorito de la mañana", serves: "Sirve 3–4", description: "Croissants, panes frescos y waffles, granola y yogur, huevos cocidos, ensaladas cremosas y fruta fresca de la isla." },
+      "2": { name: "Brunch", tag: "Clásico del fin de semana", serves: "Sirve 4–5", description: "Croissants y baguette, rosas de jamón y salami, gouda y cubos de queso, bocados dulces, miel, granola y fruta fresca." },
+      "3": { name: "Charcuteria", tag: "Clásica curada", serves: "Sirve 4–5", description: "Baguette, rosas de salami y jamón, quesos curados, galletas artesanales, aceitunas, uvas, dips y vegetales frescos." },
+      "4": { name: "Italiana", tag: "Inspirada en Italia", serves: "Sirve 4–5", description: "Pan de ajo con tomate, mozzarella y albahaca, carnes italianas, gorgonzola y gouda, pesto, aceitunas, grissini y tomates cherry." }
     },
     pap: {
-      "1": { name: "Tabla Deli Klasiko", tag: "Favorito di kas", serves: "Sirbi 2–3", description: "Karni cura, keshi, aceituna, crackers y un balans sabroso pa comparti." },
-      "2": { name: "Platter di Keshi Artesanal", tag: "Keshi promé", serves: "Sirbi 3–4", description: "Un selekshon elegante di keshi kremoso, fruta, noten y kosnan krakiente." },
-      "3": { name: "Mix Mediterraneo", tag: "Bites fresku", serves: "Sirbi 3–4", description: "Aceituna, dips, yerba, keshi y sabores fresku ku ta cla pa e isla." },
-      "4": { name: "Dushi y Sabroso", tag: "Modo fiesta", serves: "Sirbi 4–5", description: "E mihó di tur dos: salu, kremoso, krakiente, dushi y cla pa snack." },
-      "5": { name: "Delicia Vegano", tag: "Plant based", serves: "Sirbi 2–3", description: "Un spread fresku ku berdura, dips, noten y teksturan alegre." },
-      "6": { name: "E Grand Gourmet", tag: "Showstopper", serves: "Sirbi 5–6", description: "Un tabla grandi ku keshi premium, charcuterie, crackers, noten y extras." }
+      "1": { name: "Breakfast", tag: "Favorito di mainta", serves: "Sirbi 3–4", description: "Croissants, pan fresku i waffles, granola i yoghurt, webu kushiná, ensalada kremoso i fruta fresku di e isla." },
+      "2": { name: "Brunch", tag: "Klasiko di wikènt", serves: "Sirbi 4–5", description: "Croissants i baguette, rosa di ham i salami, gouda i kubonan di keshi, kosnan dushi, miel, granola i fruta fresku." },
+      "3": { name: "Charcuteria", tag: "Klasiko kurado", serves: "Sirbi 4–5", description: "Baguette, rosa di salami i ham, keshi kurado, crackers artesanal, aceituna, druif, dips i berdura fresku." },
+      "4": { name: "Italiana", tag: "Inspira di Italia", serves: "Sirbi 4–5", description: "Pan di kono ku tomate, mozzarella i basilio, karni italiano, gorgonzola i gouda, pesto, aceituna, grissini i tomate cherry." }
     },
     nl: {
-      "1": { name: "Classic Deli Board", tag: "Huisfavoriet", serves: "Voor 2–3", description: "Gedroogde vleeswaren, kazen, olijven, crackers en een fijne hartige balans om te delen." },
-      "2": { name: "Ambachtelijke Kaasplank", tag: "Kaas eerst", serves: "Voor 3–4", description: "Een romige, nootachtige en elegante kaasselectie met fruit en knapperige combinaties." },
-      "3": { name: "Mediterrane Mix", tag: "Frisse bites", serves: "Voor 3–4", description: "Olijven, dips, kruiden, kazen en frisse eilandklare smaken." },
-      "4": { name: "Zoet & Hartig Feest", tag: "Feestmodus", serves: "Voor 4–5", description: "Het beste van beide: zout, romig, knapperig, zoet en gemaakt om van te grazen." },
-      "5": { name: "Vegan Delight", tag: "Plantaardig", serves: "Voor 2–3", description: "Een frisse spread met groenten, dips, noten en heldere texturen." },
-      "6": { name: "The Grand Gourmet", tag: "Showstopper", serves: "Voor 5–6", description: "Een volle centerpiece plank met premium kazen, charcuterie, crackers, noten en extra's." }
+      "1": { name: "Breakfast", tag: "Ochtendfavoriet", serves: "Voor 3–4", description: "Croissants, vers brood en wafels, granola en yoghurt, gekookte eieren, romige salades en vers eilandfruit." },
+      "2": { name: "Brunch", tag: "Weekendklassieker", serves: "Voor 4–5", description: "Croissants en baguette, ham- en salamiroosjes, gouda en kaasblokjes, zoete bites, honing, granola en vers fruit." },
+      "3": { name: "Charcuteria", tag: "Klassiek gerijpt", serves: "Voor 4–5", description: "Baguette, salami- en hamroosjes, gerijpte kazen, ambachtelijke crackers, olijven, druiven, dips en verse groenten." },
+      "4": { name: "Italiana", tag: "Italiaans geïnspireerd", serves: "Voor 4–5", description: "Knoflookbrood met tomaat, mozzarella en basilicum, Italiaanse vleeswaren, gorgonzola en gouda, pesto, olijven, grissini en cherrytomaten." }
     }
   };
 
@@ -99,7 +89,7 @@
       heroCta1: "Build your board",
       heroCta2: "How quick order works",
       heroClub: "Brie Club members save 10% — join free",
-      heroStat1N: "6", heroStat1L: "signature boards",
+      heroStat1N: "4", heroStat1L: "signature boards",
       heroStat2N: "10%", heroStat2L: "Brie Club savings",
       heroStat3N: "Aruba", heroStat3L: "delivered island-wide",
       chipFresh: "Styled fresh daily",
@@ -362,7 +352,7 @@
       heroCta1: "Arma tu tabla",
       heroCta2: "Cómo pedir rápido",
       heroClub: "Los miembros del Brie Club ahorran 10% — únete gratis",
-      heroStat1N: "6", heroStat1L: "tablas de autor",
+      heroStat1N: "4", heroStat1L: "tablas de autor",
       heroStat2N: "10%", heroStat2L: "ahorro Brie Club",
       heroStat3N: "Aruba", heroStat3L: "entrega en toda la isla",
       chipFresh: "Frescas cada día",
@@ -626,7 +616,7 @@
     heroCta1: "Traha bo tabla",
     heroCta2: "Kon pedido lihé ta funciona",
     heroClub: "Miembronan di Brie Club ta saka 10% — drenta gratis",
-    heroStat1N: "6", heroStat1L: "tabla di firma",
+    heroStat1N: "4", heroStat1L: "tabla di firma",
     heroStat2N: "10%", heroStat2L: "ahorro Brie Club",
     heroStat3N: "Aruba", heroStat3L: "entrega na henter e isla",
     chipFresh: "Fresku tur dia",
@@ -889,7 +879,7 @@
     heroCta1: "Stel je plank samen",
     heroCta2: "Zo werkt snel bestellen",
     heroClub: "Brie Club-leden krijgen 10% — gratis lid",
-    heroStat1N: "6", heroStat1L: "signatuurplanken",
+    heroStat1N: "4", heroStat1L: "signatuurplanken",
     heroStat2N: "10%", heroStat2L: "Brie Club voordeel",
     heroStat3N: "Aruba", heroStat3L: "bezorging op het eiland",
     chipFresh: "Dagvers gestyled",
@@ -1213,12 +1203,10 @@
   };
 
   const LOCAL_PHOTOS = {
-    "1": "classic-deli-board",
-    "2": "artisan-cheese-platter",
-    "3": "mediterranean-mix",
-    "4": "sweet-savory-feast",
-    "5": "vegan-delight",
-    "6": "grand-gourmet"
+    "1": "breakfast",
+    "2": "brunch",
+    "3": "charcuteria",
+    "4": "italiana"
   };
 
   const FAKE_CONTACT = {
@@ -1368,14 +1356,14 @@
     const stored = (product.image || "").trim();
     const hasStored = stored && !/catbox\.moe/i.test(stored);
     if (hasStored) {
-      return { src: stored, srcset: "", webp: "", fallback: local ? "platter-photos/" + local + ".jpg" : stored };
+      return { src: stored, srcset: "", webp: "", fallback: local ? "photos/" + local + ".webp" : stored };
     }
     if (local) {
       return {
-        src: "platter-photos/" + local + ".jpg",
-        webp: "platter-photos/" + local + ".webp",
+        src: "photos/" + local + ".webp",
+        webp: "",
         srcset: "",
-        fallback: "platter-photos/" + local + ".jpg"
+        fallback: "photos/" + local + ".webp"
       };
     }
     if (stored) {
@@ -1490,7 +1478,7 @@
         const local = id && LOCAL_PHOTOS[id];
         if (local && img.getAttribute("data-retried") !== "1") {
           img.setAttribute("data-retried", "1");
-          img.src = "platter-photos/" + local + ".jpg";
+          img.src = "photos/" + local + ".webp";
           return;
         }
         const wrap = img.closest("[data-photo]");
