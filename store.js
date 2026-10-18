@@ -39,25 +39,25 @@
     en: {
       "1": { name: "Breakfast", tag: "Morning favorite", serves: "Serves 3–4", description: "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit." },
       "2": { name: "Brunch", tag: "Weekend classic", serves: "Serves 4–5", description: "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit." },
-      "3": { name: "Charcuteria", tag: "Cured classic", serves: "Serves 4–5", description: "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips and crisp fresh vegetables." },
+      "3": { name: "Charcuteria", tag: "Cured classic", serves: "Serves 4–5", description: "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips, crisp vegetables and a chilled bottle of prosecco." },
       "4": { name: "Italiana", tag: "Italian-inspired", serves: "Serves 4–5", description: "Garlic bread with tomato, mozzarella and basil, Italian cured meats, gorgonzola and gouda, pesto, olives, grissini and cherry tomatoes." }
     },
     es: {
       "1": { name: "Breakfast", tag: "Favorito de la mañana", serves: "Sirve 3–4", description: "Croissants, panes frescos y waffles, granola y yogur, huevos cocidos, ensaladas cremosas y fruta fresca de la isla." },
       "2": { name: "Brunch", tag: "Clásico del fin de semana", serves: "Sirve 4–5", description: "Croissants y baguette, rosas de jamón y salami, gouda y cubos de queso, bocados dulces, miel, granola y fruta fresca." },
-      "3": { name: "Charcuteria", tag: "Clásica curada", serves: "Sirve 4–5", description: "Baguette, rosas de salami y jamón, quesos curados, galletas artesanales, aceitunas, uvas, dips y vegetales frescos." },
+      "3": { name: "Charcuteria", tag: "Clásica curada", serves: "Sirve 4–5", description: "Baguette, rosas de salami y jamón, quesos curados, galletas artesanales, aceitunas, uvas, dips, vegetales frescos y una botella de prosecco bien fría." },
       "4": { name: "Italiana", tag: "Inspirada en Italia", serves: "Sirve 4–5", description: "Pan de ajo con tomate, mozzarella y albahaca, carnes italianas, gorgonzola y gouda, pesto, aceitunas, grissini y tomates cherry." }
     },
     pap: {
       "1": { name: "Breakfast", tag: "Favorito di mainta", serves: "Sirbi 3–4", description: "Croissants, pan fresku i waffles, granola i yoghurt, webu kushiná, ensalada kremoso i fruta fresku di e isla." },
       "2": { name: "Brunch", tag: "Klasiko di wikènt", serves: "Sirbi 4–5", description: "Croissants i baguette, rosa di ham i salami, gouda i kubonan di keshi, kosnan dushi, miel, granola i fruta fresku." },
-      "3": { name: "Charcuteria", tag: "Klasiko kurado", serves: "Sirbi 4–5", description: "Baguette, rosa di salami i ham, keshi kurado, crackers artesanal, aceituna, druif, dips i berdura fresku." },
+      "3": { name: "Charcuteria", tag: "Klasiko kurado", serves: "Sirbi 4–5", description: "Baguette, rosa di salami i ham, keshi kurado, crackers artesanal, aceituna, druif, dips, berdura fresku i un boter di prosecco friu." },
       "4": { name: "Italiana", tag: "Inspira di Italia", serves: "Sirbi 4–5", description: "Pan di kono ku tomate, mozzarella i basilio, karni italiano, gorgonzola i gouda, pesto, aceituna, grissini i tomate cherry." }
     },
     nl: {
       "1": { name: "Breakfast", tag: "Ochtendfavoriet", serves: "Voor 3–4", description: "Croissants, vers brood en wafels, granola en yoghurt, gekookte eieren, romige salades en vers eilandfruit." },
       "2": { name: "Brunch", tag: "Weekendklassieker", serves: "Voor 4–5", description: "Croissants en baguette, ham- en salamiroosjes, gouda en kaasblokjes, zoete bites, honing, granola en vers fruit." },
-      "3": { name: "Charcuteria", tag: "Klassiek gerijpt", serves: "Voor 4–5", description: "Baguette, salami- en hamroosjes, gerijpte kazen, ambachtelijke crackers, olijven, druiven, dips en verse groenten." },
+      "3": { name: "Charcuteria", tag: "Klassiek gerijpt", serves: "Voor 4–5", description: "Baguette, salami- en hamroosjes, gerijpte kazen, ambachtelijke crackers, olijven, druiven, dips, verse groenten en een gekoelde fles prosecco." },
       "4": { name: "Italiana", tag: "Italiaans geïnspireerd", serves: "Voor 4–5", description: "Knoflookbrood met tomaat, mozzarella en basilicum, Italiaanse vleeswaren, gorgonzola en gouda, pesto, olijven, grissini en cherrytomaten." }
     }
   };
