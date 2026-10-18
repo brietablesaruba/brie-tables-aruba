@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "source": "brie-admin-app",
+  "updatedAt": "2026-10-18T14:28:48.684Z",
+  "items": [
+    {
+      "id": "1",
+      "name": "Classic Deli Board",
+      "tag": "House favorite",
+      "price": 35,
+      "serves": "Serves 2–3",
+      "image": "photos/1.webp?v=1792333728",
+      "accent": "#000000",
+      "description": "Cured meats, cheeses, olives, crackers, and a clean savory balance for easy sharing.",
+      "available": false
+    },
+    {
+      "id": "2",
+      "name": "Artisan Cheese Platter",
+      "tag": "Cheese first",
+      "price": 45,
+      "serves": "Serves 3–4",
+      "image": "",
+      "accent": "#f8d574",
+      "description": "A creamy, nutty, elegant cheese selection with fruit notes and crunchy pairings.",
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "Mediterranean Mix",
+      "tag": "Bright bites",
+      "price": 40,
+      "serves": "Serves 3–4",
+      "image": "",
+      "accent": "#6e7c23",
+      "description": "Olives, dips, herbs, cheeses, and fresh island-ready flavors with a sunny finish.",
+      "available": true
+    },
+    {
+      "id": "4",
+      "name": "Sweet & Savory Feast",
+      "tag": "Party mode",
+      "price": 50,
+      "serves": "Serves 4–5",
+      "image": "",
+      "accent": "#c8562b",
+      "description": "The best of both moods: salty, creamy, crisp, sweet, and built for grazing.",
+      "available": true
+    },
+    {
+      "id": "5",
+      "name": "Vegan Delight",
+      "tag": "Plant based",
+      "price": 30,
+      "serves": "Serves 2–3",
+      "image": "",
+      "accent": "#839033",
+      "description": "A fresh spread of plant-forward bites, vegetables, dips, nuts, and bright textures.",
+      "available": true
+    },
+    {
+      "id": "6",
+      "name": "The Grand Gourmet",
+      "tag": "Showstopper",
+      "price": 60,
+      "serves": "Serves 5–6",
+      "image": "",
+      "accent": "#ad3728",
+      "description": "A fuller centerpiece board with premium cheeses, charcuterie, crackers, nuts, and extras.",
+      "available": true
+    }
+  ],
+  "settings": {
+    "logoUrl": "",
+    "addToCartText": ""
+  },
+  "contactInfo": {
+    "whatsapp": "2975679921",
+    "email": "Manu99jz@gmail.com",
+    "hours": "",
+    "instagram": "",
+    "facebook": ""
+  }
+}
