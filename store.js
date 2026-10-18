@@ -13,6 +13,8 @@
     whatsapp: "2975679921",              // digits only, country code first
     email: "Manu99jz@gmail.com",
     memberDiscount: 0.10,                // Brie Club discount
+    ordersRelay: "https://ntfy.sh",      // free relay that carries orders to the shop phone
+    ordersTopic: "brie-tables-orders-9f3k7q2mx5",
     storage: {
       admin: "brieTablesAdminSettingsV1",
       customers: "brieTablesCustomersV1",
@@ -261,6 +263,9 @@
       phNotes: "Allergies, occasion, gate code…",
       waButton: "Send order on WhatsApp",
       emailButton: "Send by email",
+      placeOrder: "Place order",
+      waFallback: "Trouble? Send it on WhatsApp instead",
+      toastOrderSent: "Order placed! We'll contact you shortly to confirm.",
       secureNote: "No payment now — every order is confirmed personally.",
       errorCart: "Add at least one board before sending.",
       errorDetails: "Please add your name, WhatsApp number and delivery address.",
@@ -521,6 +526,9 @@
       phNotes: "Alergias, ocasión, código del portón…",
       waButton: "Enviar pedido por WhatsApp",
       emailButton: "Enviar por correo",
+      placeOrder: "Enviar pedido",
+      waFallback: "¿Problema? Envíalo por WhatsApp",
+      toastOrderSent: "¡Pedido enviado! Te contactaremos pronto para confirmar.",
       secureNote: "Sin pago ahora — cada pedido se confirma personalmente.",
       errorCart: "Añade al menos una tabla antes de enviar.",
       errorDetails: "Añade tu nombre, número de WhatsApp y dirección de entrega.",
@@ -782,6 +790,9 @@
     phNotes: "Alergia, ocasion, código di porta…",
     waButton: "Manda pedido via WhatsApp",
     emailButton: "Manda via email",
+    placeOrder: "Manda pedido",
+    waFallback: "Problema? Manda e via WhatsApp",
+    toastOrderSent: "Pedido ariba! Nos lo kontactá bo pronto pa konfirmá.",
     secureNote: "No mester paga awor — kada pedido ta konfirmá personalmente.",
     errorCart: "Añadi por lo menos un tabla promé ku bo manda.",
     errorDetails: "Añadi bo nomber, number di WhatsApp i adrès di entrega.",
@@ -1042,6 +1053,9 @@
     phNotes: "Allergieën, gelegenheid, poortcode…",
     waButton: "Bestelling via WhatsApp",
     emailButton: "Verstuur per e-mail",
+    placeOrder: "Bestelling plaatsen",
+    waFallback: "Probleem? Verstuur via WhatsApp",
+    toastOrderSent: "Bestelling geplaatst! We nemen snel contact op om te bevestigen.",
     secureNote: "Nu geen betaling — elke bestelling wordt persoonlijk bevestigd.",
     errorCart: "Voeg minstens één plank toe voordat je verstuurt.",
     errorDetails: "Voeg je naam, WhatsApp-nummer en bezorgadres toe.",
@@ -2334,6 +2348,12 @@
       return;
     }
     const ref = orderRef();
+
+    if (channel === "app") {
+      submitOrder(ref, data);
+      return;
+    }
+
     const message = buildOrderMessage(ref, data);
 
     if (channel === "whatsapp") {
@@ -2347,6 +2367,89 @@
       window.location.href = url;
       toast(t("toastEmail"));
     }
+    afterSend(ref, data);
+  }
+
+  /** Sends the order straight to the shop phone through the free relay. */
+  function submitOrder(ref, data) {
+    const rows = totals();
+    const payload = {
+      v: 1,
+      src: "site",
+      ref: ref,
+      ts: Date.now(),
+      lang: state.lang,
+      items: rows.lines.map(function (line) {
+        return { name: line.view.name, qty: line.qty, unit: line.unit, line: line.line };
+      }),
+      subtotal: rows.subtotal,
+      discount: rows.discount,
+      total: rows.total,
+      customer: {
+        name: data.name,
+        phone: data.phone,
+        address: data.address,
+        asap: data.asap,
+        day: data.day,
+        time: data.time,
+        maps: data.maps,
+        change: data.change,
+        notes: data.notes,
+        member: state.member ? (state.member.name || memberFirstName()) : ""
+      }
+    };
+
+    let promise = null;
+    try {
+      promise = publishOrder(payload);
+    } catch (err) {
+      promise = null;
+    }
+    if (promise && promise.then) {
+      promise.then(function () {
+        toast(t("toastOrderSent"));
+        afterSend(ref, data);
+      }).catch(function () {
+        // relay unreachable — fall back to WhatsApp so the order is never lost
+        fallbackWhatsApp(ref, data);
+      });
+    } else {
+      fallbackWhatsApp(ref, data);
+    }
+  }
+
+  function publishOrder(payload) {
+    const url = (CONFIG.ordersRelay || "https://ntfy.sh") + "/" + CONFIG.ordersTopic;
+    const body = JSON.stringify(payload);
+    return new Promise(function (resolve, reject) {
+      let settled = false;
+      const timer = setTimeout(function () {
+        if (!settled) { settled = true; reject(new Error("relay timeout")); }
+      }, 9000);
+      fetch(url, {
+        method: "POST",
+        body: body,
+        headers: { "Content-Type": "text/plain;charset=UTF-8" }
+      }).then(function (res) {
+        if (settled) { return; }
+        settled = true;
+        clearTimeout(timer);
+        if (res && res.ok) { resolve(); } else { reject(new Error("relay " + (res && res.status))); }
+      }).catch(function (err) {
+        if (settled) { return; }
+        settled = true;
+        clearTimeout(timer);
+        reject(err);
+      });
+    });
+  }
+
+  function fallbackWhatsApp(ref, data) {
+    const message = buildOrderMessage(ref, data);
+    const url = "https://wa.me/" + (state.whatsapp || CONFIG.whatsapp) +
+      "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank", "noopener");
+    toast(t("toastWa"));
     afterSend(ref, data);
   }
 
@@ -2522,8 +2625,8 @@
       const barClose = hit("#bar-close");
       if (barClose) { state.barDismissed = true; updateBar(); return; }
 
+      if (hit("#btn-place")) { sendOrder("app"); return; }
       if (hit("#btn-whatsapp")) { sendOrder("whatsapp"); return; }
-      if (hit("#btn-email")) { sendOrder("email"); return; }
 
       if (hit("#menu-toggle")) {
         const header = $("#site-header");

@@ -1002,7 +1002,7 @@ body.drawer-open .order-bar { display: none; }
 .extras summary::before { content: "+"; font-size: 14px; line-height: 1; width: 12px; }
 .extras[open] summary::before { content: "–"; }
 .extras .form-grid { margin-top: 8px; }
-.order-actions { display: grid; grid-template-columns: 1.25fr 1fr; gap: 8px; margin-top: 18px; }
+.order-actions { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
 .order-actions .btn { min-height: 49px; padding: 0 14px; font-size: 11.5px; white-space: normal; line-height: 1.25; }
 .btn-wa {
   color: #f5fff9;
@@ -1015,6 +1015,25 @@ body.drawer-open .order-bar { display: none; }
   border-color: rgba(70, 38, 13, 0.18);
 }
 .btn-mail:hover { background: #fff; transform: translateY(-1px); }
+.btn-place {
+  color: #fff8ea;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 52%), linear-gradient(135deg, #b8791c, #e0a52e);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 12px 24px rgba(184, 121, 28, 0.25);
+}
+.btn-place:hover { transform: translateY(-1px); }
+.order-actions .btn-place { font-size: 13px; letter-spacing: 0.06em; }
+.wa-fallback { margin: 10px 0 0; text-align: center; }
+.wa-fallback button {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-2);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 6px 4px;
+}
 .secure-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; color: var(--muted-2); font-size: 10px; line-height: 1.4; text-align: center; }
 .secure-note svg { width: 11px; height: 11px; flex: 0 0 auto; }
 
