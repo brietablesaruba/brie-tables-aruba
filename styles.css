@@ -397,6 +397,7 @@ p { margin: 0; }
   padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(217, 154, 34, 0.35);
   background: rgba(255, 255, 255, 0.55); box-shadow: var(--shadow-sm);
 }
+.menu-side.is-hidden { display: none; }
 .menu-side .side-ic {
   display: grid; place-items: center; flex: 0 0 auto; width: 34px; height: 34px;
   border-radius: 50%; color: var(--gold-deep); background: rgba(246, 217, 140, 0.36);

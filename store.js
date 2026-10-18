@@ -2018,6 +2018,8 @@
   }
 
   function renderClubCard() {
+    const menuSide = $("#menu-side");
+    if (menuSide) { menuSide.classList.toggle("is-hidden", !!state.member); }
     const host = $("#club-card");
     if (!host) return;
     const logoMark = DEFAULT_MARK;
