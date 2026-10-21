@@ -1,19 +1,8 @@
 {
   "version": 2,
   "source": "brie-admin-app",
-  "updatedAt": "2026-10-18T23:42:59.490Z",
+  "updatedAt": "2026-10-21T13:59:07.905Z",
   "items": [
-    {
-      "id": "1",
-      "name": "Breakfast",
-      "tag": "Morning favorite",
-      "price": 45,
-      "serves": "Serves 3–4",
-      "image": "photos/breakfast.webp",
-      "accent": "#eba23c",
-      "description": "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit.",
-      "available": true
-    },
     {
       "id": "2",
       "name": "Brunch",
@@ -23,6 +12,17 @@
       "image": "photos/brunch.webp",
       "accent": "#c96f2e",
       "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
+      "available": true
+    },
+    {
+      "id": "1",
+      "name": "Breakfast",
+      "tag": "Morning favorite",
+      "price": 45,
+      "serves": "Serves 3–4",
+      "image": "photos/breakfast.webp",
+      "accent": "#eba23c",
+      "description": "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit.",
       "available": true
     },
     {
