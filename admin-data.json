@@ -1,24 +1,13 @@
 {
   "version": 2,
   "source": "brie-admin-app",
-  "updatedAt": "2026-10-21T13:59:07.905Z",
+  "updatedAt": "2026-10-21T14:18:46.539Z",
   "items": [
-    {
-      "id": "2",
-      "name": "Brunch",
-      "tag": "Weekend classic",
-      "price": 55,
-      "serves": "Serves 4–5",
-      "image": "photos/brunch.webp",
-      "accent": "#c96f2e",
-      "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
-      "available": true
-    },
     {
       "id": "1",
       "name": "Breakfast",
       "tag": "Morning favorite",
-      "price": 45,
+      "price": 85,
       "serves": "Serves 3–4",
       "image": "photos/breakfast.webp",
       "accent": "#eba23c",
@@ -26,25 +15,36 @@
       "available": true
     },
     {
-      "id": "3",
-      "name": "Charcuteria",
-      "tag": "Cured classic",
-      "price": 65,
-      "serves": "Serves 4–5",
-      "image": "photos/charcuteria.webp",
-      "accent": "#b23a48",
-      "description": "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips, crisp vegetables and a chilled bottle of prosecco.",
-      "available": true
-    },
-    {
       "id": "4",
       "name": "Italiana",
       "tag": "Italian-inspired",
-      "price": 60,
+      "price": 80,
       "serves": "Serves 4–5",
       "image": "photos/italiana.webp",
       "accent": "#6d8b3a",
       "description": "Garlic bread with tomato, mozzarella and basil, Italian cured meats, gorgonzola and gouda, pesto, olives, grissini and cherry tomatoes.",
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Brunch",
+      "tag": "Weekend classic",
+      "price": 80,
+      "serves": "Serves 4–5",
+      "image": "photos/brunch.webp",
+      "accent": "#c96f2e",
+      "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "Charcuteria",
+      "tag": "Cured classic",
+      "price": 90,
+      "serves": "Serves 4–5",
+      "image": "photos/charcuteria.webp",
+      "accent": "#b23a48",
+      "description": "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips, crisp vegetables and a chilled bottle of prosecco.",
       "available": true
     }
   ],
@@ -53,10 +53,10 @@
     "addToCartText": ""
   },
   "contactInfo": {
-    "whatsapp": "2975679921",
+    "whatsapp": "2975622182",
     "email": "Brietablesaruba@gmail.com",
     "hours": "",
-    "instagram": "",
+    "instagram": "https://www.instagram.com/brie.aua?srtk=MTVoNm13emo1eTl5aA==",
     "facebook": ""
   }
 }
