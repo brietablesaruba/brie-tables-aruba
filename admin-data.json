@@ -1,19 +1,8 @@
 {
   "version": 2,
   "source": "brie-admin-app",
-  "updatedAt": "2026-10-21T15:51:49.510Z",
+  "updatedAt": "2026-10-21T16:03:27.371Z",
   "items": [
-    {
-      "id": "2",
-      "name": "Brunch",
-      "tag": "Weekend classic",
-      "price": 55,
-      "serves": "Serves 4–5",
-      "image": "photos/brunch.webp",
-      "accent": "#c96f2e",
-      "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
-      "available": true
-    },
     {
       "id": "1",
       "name": "Breakfast",
@@ -23,6 +12,17 @@
       "image": "photos/breakfast.webp",
       "accent": "#eba23c",
       "description": "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit.",
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Brunch",
+      "tag": "Weekend classic",
+      "price": 55,
+      "serves": "Serves 4–5",
+      "image": "photos/brunch.webp",
+      "accent": "#c96f2e",
+      "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
       "available": true
     },
     {
