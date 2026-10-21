@@ -844,9 +844,9 @@ p { margin: 0; }
 .admin-link:hover { opacity: 1; }
 .rights-line { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
 .rights-line > span[data-i18n] { min-width: 0; }
-.powered-badge {
-  width: 42px; height: 42px; flex: 0 0 auto;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
+.footer-protected {
+  height: 40px; width: auto; flex: 0 0 auto;
+  max-width: 100%;
 }
 
 /* ---------- sticky order bar ---------- */
