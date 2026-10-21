@@ -1,13 +1,13 @@
 {
   "version": 2,
   "source": "brie-admin-app",
-  "updatedAt": "2026-10-21T16:03:27.371Z",
+  "updatedAt": "2026-10-21T16:05:41.539Z",
   "items": [
     {
       "id": "1",
       "name": "Breakfast",
       "tag": "Morning favorite",
-      "price": 45,
+      "price": 40,
       "serves": "Serves 3–4",
       "image": "photos/breakfast.webp",
       "accent": "#eba23c",
