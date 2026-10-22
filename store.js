@@ -254,6 +254,7 @@
       waButton: "Send order on WhatsApp",
       emailButton: "Send by email",
       placeOrder: "Place order",
+      placingOrder: "Sending…",
       waFallback: "Trouble? Send it on WhatsApp instead",
       toastOrderSent: "Order placed! We'll contact you shortly to confirm.",
       secureNote: "No payment now — every order is confirmed personally.",
@@ -517,6 +518,7 @@
       waButton: "Enviar pedido por WhatsApp",
       emailButton: "Enviar por correo",
       placeOrder: "Enviar pedido",
+      placingOrder: "Enviando…",
       waFallback: "¿Problema? Envíalo por WhatsApp",
       toastOrderSent: "¡Pedido enviado! Te contactaremos pronto para confirmar.",
       secureNote: "Sin pago ahora — cada pedido se confirma personalmente.",
@@ -781,6 +783,7 @@
     waButton: "Manda pedido via WhatsApp",
     emailButton: "Manda via email",
     placeOrder: "Manda pedido",
+    placingOrder: "Mandando…",
     waFallback: "Problema? Manda e via WhatsApp",
     toastOrderSent: "Pedido ariba! Nos lo kontactá bo pronto pa konfirmá.",
     secureNote: "No mester paga awor — kada pedido ta konfirmá personalmente.",
@@ -1044,6 +1047,7 @@
     waButton: "Bestelling via WhatsApp",
     emailButton: "Verstuur per e-mail",
     placeOrder: "Bestelling plaatsen",
+    placingOrder: "Verzenden…",
     waFallback: "Probleem? Verstuur via WhatsApp",
     toastOrderSent: "Bestelling geplaatst! We nemen snel contact op om te bevestigen.",
     secureNote: "Nu geen betaling — elke bestelling wordt persoonlijk bevestigd.",
@@ -1127,7 +1131,8 @@
     barDismissed: false,
     contact: {},
     addLabel: null,
-    lastFocus: null
+    lastFocus: null,
+    sending: false
   };
 
   const $ = (sel, root) => (root || document).querySelector(sel);
@@ -1630,6 +1635,14 @@
     document.body.classList.add("locked");
     renderCart();
     updateBar();
+    const dayField = $("#delivery-day");
+    if (dayField) {
+      const now = new Date();
+      const today = now.getFullYear() + "-" +
+        String(now.getMonth() + 1).padStart(2, "0") + "-" +
+        String(now.getDate()).padStart(2, "0");
+      dayField.min = today;
+    }
     const closeBtn = $("#drawer-close");
     if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
@@ -2330,7 +2343,19 @@
     closeDrawer();
   }
 
+  /** Puts the Place-order button into a disabled "sending" state (and back). */
+  function setPlacing(on) {
+    state.sending = !!on;
+    const btn = $("#btn-place");
+    if (!btn) return;
+    btn.disabled = !!on;
+    btn.classList.toggle("is-sending", !!on);
+    const label = btn.querySelector("[data-i18n]");
+    if (label) label.textContent = on ? t("placingOrder") : t("placeOrder");
+  }
+
   function sendOrder(channel) {
+    if (state.sending) return; // guard against double taps while an order is in flight
     const data = checkoutData();
     const check = validateCheckout(data);
     if (!check.ok) {
@@ -2389,6 +2414,7 @@
       }
     };
 
+    setPlacing(true);
     let promise = null;
     try {
       promise = publishOrder(payload);
@@ -2397,13 +2423,16 @@
     }
     if (promise && promise.then) {
       promise.then(function () {
-        toast(t("toastOrderSent"));
+        setPlacing(false);
+        toast(t("toastOrderSent") + " · " + ref);
         afterSend(ref, data);
       }).catch(function () {
         // relay unreachable — fall back to WhatsApp so the order is never lost
+        setPlacing(false);
         fallbackWhatsApp(ref, data);
       });
     } else {
+      setPlacing(false);
       fallbackWhatsApp(ref, data);
     }
   }

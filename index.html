@@ -30,21 +30,101 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261018">
+  <link rel="stylesheet" href="styles.css?v=20261021">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
+    "@id": "https://www.brietablesaruba.com/#business",
     "name": "Brie Tables Aruba",
+    "description": "Hand-styled cheese and charcuterie boards, made fresh in Aruba and delivered chilled to your villa, beach or boat.",
     "url": "https://www.brietablesaruba.com/",
     "image": "https://www.brietablesaruba.com/social-share.jpg",
-    "logo": "https://www.brietablesaruba.com/brie-tables-logo-transparent.png",
+    "logo": "https://www.brietablesaruba.com/brie-tables-logo-schema.png",
     "telephone": "+297 567 9921",
     "email": "Manu99jz@gmail.com",
     "servesCuisine": "Deli, charcuterie, cheese boards, grazing platters",
     "priceRange": "$$",
-    "areaServed": "Aruba"
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oranjestad",
+      "addressRegion": "Aruba",
+      "addressCountry": "AW"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Aruba"
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Deli Platters",
+      "hasMenuSection": {
+        "@type": "MenuSection",
+        "name": "Signature boards",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Breakfast",
+            "description": "Croissants, fresh breads and waffles, granola and yogurt cups, boiled eggs, creamy salads and a rainbow of island fruit.",
+            "offers": { "@type": "Offer", "price": "45", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Brunch",
+            "description": "Croissants and baguette, ham and salami roses, gouda and cheese cubes, sweet bites, honey, granola cups and fresh fruit.",
+            "offers": { "@type": "Offer", "price": "55", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Charcuteria",
+            "description": "Baguette, salami and ham roses, aged cheeses, artisan crackers, olives, grapes, dips, crisp vegetables and a chilled bottle of prosecco.",
+            "offers": { "@type": "Offer", "price": "65", "priceCurrency": "USD" }
+          },
+          {
+            "@type": "MenuItem",
+            "name": "Italiana",
+            "description": "Garlic bread with tomato, mozzarella and basil, Italian cured meats, gorgonzola and gouda, pesto, olives, grissini and cherry tomatoes.",
+            "offers": { "@type": "Offer", "price": "60", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where do you deliver?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anywhere in Aruba — villas, hotels, beaches and boats. Share your address or a Maps pin and we'll confirm the timing on WhatsApp." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much notice do you need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ASAP orders are welcome and depend on availability. For larger or custom boards, a day's notice is ideal." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customise a board?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Allergies, dislikes, extra cheese — add a note to your order or message us and we'll build around you." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pay?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cash on delivery is easiest — tell us if you need change. Message us on WhatsApp if you'd prefer another arrangement." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you cater events?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — villa parties, proposals, brunches and corporate gifts. Send us the details and we'll plan the spread." }
+      }
+    ]
   }
   </script>
 </head>
@@ -746,6 +826,6 @@
     <span id="toast-text"></span>
   </div>
 
-  <script src="store.js?v=20261018b" defer></script>
+  <script src="store.js?v=20261021" defer></script>
 </body>
 </html>

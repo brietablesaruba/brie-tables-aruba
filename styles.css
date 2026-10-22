@@ -856,7 +856,7 @@ p { margin: 0; }
   display: flex; align-items: center; gap: 14px;
   width: min(560px, calc(100% - 32px)); padding: 8px 8px 8px 14px;
   border-radius: 999px; border: 1px solid rgba(217, 154, 34, 0.38);
-  background: rgba(255, 250, 240, 0.92);
+  background: rgba(255, 250, 240, 0.97);
   -webkit-backdrop-filter: blur(18px) saturate(1.2); backdrop-filter: blur(18px) saturate(1.2);
   box-shadow: 0 22px 55px rgba(74, 42, 15, 0.22);
   animation: bar-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -1029,6 +1029,7 @@ body.drawer-open .order-bar { display: none; }
 }
 .btn-place:hover { transform: translateY(-1px); }
 .order-actions .btn-place { font-size: 13px; letter-spacing: 0.06em; }
+.btn-place.is-sending, .btn-place:disabled { opacity: 0.75; cursor: progress; transform: none; }
 .wa-fallback { margin: 10px 0 0; text-align: center; }
 .wa-fallback button {
   font: inherit;
@@ -1199,6 +1200,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .footer-bottom { justify-content: flex-start; }
 }
 @media (max-width: 640px) {
+  /* Hide decorative hero chips/sparkles on phones so they don't sit behind the
+     sticky order bar; the same value props stay in the top ribbon and sections. */
+  .hero-art .float-chip, .hero-art .sparkle { display: none; }
   .ribbon-item:nth-child(2) { display: none; }
   .ribbon-inner { justify-content: center; }
   .brand-text strong { font-size: 19px; }
